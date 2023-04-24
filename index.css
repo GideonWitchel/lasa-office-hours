@@ -1,0 +1,13 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+.foot {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    color: white;
+}
