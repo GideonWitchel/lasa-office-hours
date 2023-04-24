@@ -1,0 +1,29 @@
+body {
+    background-color: dimgray;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+.foot {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    color: white;
+}
+.week {
+    margin: 20px;
+}
+.block-pocket {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    gap: 10px;
+}
+.block {
+
+}
