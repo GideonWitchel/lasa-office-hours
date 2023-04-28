@@ -26,19 +26,14 @@ body {
 }
 .block {
 }
-.close {
-    float: right;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: .5;
-}
 
-button.close {
-    padding: 0;
-    background-color: transparent;
-    border: 0;
-    -webkit-appearance: none;
+#classInfo{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 0px 20px ;
+    align-content: center;
+}
+.info{
+    margin: 3px;
+    color: white;
 }
