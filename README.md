@@ -1,5 +1,5 @@
 # Unified LASA Office Hours
-Gideon Witchel and Andrew Teodorovich
+##Gideon Witchel and Andrew Teodorovich
 
 LASA teachers’ office hours are displayed on the LASA Life app in a spreadsheet format. Students can look up specific classes to see their office hours. This is a clunky system which doesn’t suit students’ needs, because it doesn’t allow students to easily compare office hours, plan for which office hours to go to, or see what other teachers in the same subject have office hours at different times.
 
@@ -9,7 +9,7 @@ The website will use HTML, CSS, Javascript, Bootstrap, and Flask. We will use Py
 
 We will use GitHub to collaborate and enforce version control.
 
-To determine the efficacy of the website, we will have 3 criteria:
-Visually appealing and well organized
-Simple user interface to select classes, teachers, subjects to display
-Well documented for future upkeep as teachers’ office hours change
+##To determine the efficacy of the website, we will have 3 criteria:
+- Visually appealing and well organized.
+- Simple user interface to select classes, teachers, subjects to display.
+- Well documented for future upkeep as teachers’ office hours change.
