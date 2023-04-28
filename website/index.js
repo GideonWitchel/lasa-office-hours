@@ -56,7 +56,34 @@ function populateButton(day, time, classNum) {
     let newElement = document.createElement("button")
     newElement.type = "button"
     newElement.classList.add("btn")
-    newElement.classList.add("btn-primary")
+    switch(classes[classNum][2]){
+        case "Social Studies":
+            newElement.classList.add("btn-success")
+            break
+        case "Fine Arts":
+            newElement.classList.add("btn-warning")
+            break
+        case "English":
+            newElement.classList.add("btn-info")
+            break
+        case "Science":
+            newElement.classList.add("btn-danger")
+            break
+        case "CTE":
+            newElement.classList.add("btn-secondary")
+            break
+        case "Math":
+            newElement.classList.add("btn-light")
+            break
+        default:
+            if(classes[classNum][2].includes("LOTE")){
+                newElement.classList.add("btn-primary")
+            }
+            else {
+                newElement.classList.add("btn-link")
+            }
+            break
+    }
     newElement.classList.add("class-"+classNum)
     newElement.innerText = buttonData
     newElement.addEventListener("click", function() {
