@@ -4,6 +4,7 @@ data = [[['0', '8', '9', '14', '19', '32', '34', '35', '44', '46', '51', '58', '
 
 window.addEventListener("load", function() {
     drawButtons()
+    initCheckboxes()
 });
 
 function drawButtons() {
@@ -13,6 +14,22 @@ function drawButtons() {
                 populateButton(day, time, data[time][day][classNum])
             }
         }
+    }
+}
+
+function initCheckboxes() {
+    let categories = ["socialstudies", "finearts", "english", "science", "cte", "math", "lote"]
+    for (let i = 0; i < categories.length; i++) {
+        $("#checkbox-"+categories[i]).change(function() {
+            if (this.checked){
+                // Enable all buttons
+                $(".class-"+categories[i]).show()
+            }
+            else {
+                // Disable all buttons
+                $(".class-"+categories[i]).hide()
+            }
+        });
     }
 }
 
@@ -51,39 +68,48 @@ function populateButton(day, time, classNum) {
         default:
             return
     }
-    let buttonData = classes[classNum][0] + " | " + classes[classNum][2]
+    let buttonData = classes[classNum][0]
     let folder = document.getElementById(idToFill).firstElementChild
     let newElement = document.createElement("button")
     newElement.type = "button"
     newElement.classList.add("btn")
     switch(classes[classNum][2]){
         case "Social Studies":
-            newElement.classList.add("btn-success")
+            newElement.classList.add("class-socialstudies")
+            newElement.classList.add("class-socialstudies-color")
             break
         case "Fine Arts":
-            newElement.classList.add("btn-warning")
+            newElement.classList.add("class-finearts")
+            newElement.classList.add("class-finearts-color")
             break
         case "English":
-            newElement.classList.add("btn-info")
+            newElement.classList.add("class-english")
+            newElement.classList.add("class-english-color")
             break
         case "Science":
-            newElement.classList.add("btn-danger")
+            newElement.classList.add("class-science")
+            newElement.classList.add("class-science-color")
             break
         case "CTE":
-            newElement.classList.add("btn-secondary")
+            newElement.classList.add("class-cte")
+            newElement.classList.add("class-cte-color")
             break
         case "Math":
-            newElement.classList.add("btn-light")
+            newElement.classList.add("class-math")
+            newElement.classList.add("class-math-color")
             break
         default:
             if(classes[classNum][2].includes("LOTE")){
-                newElement.classList.add("btn-primary")
+                newElement.classList.add("class-lote")
+                newElement.classList.add("class-lote-color")
             }
             else {
-                newElement.classList.add("btn-link")
+                newElement.classList.add("class-unknown")
+                newElement.classList.add("class-unknown-color")
             }
             break
     }
+    newElement.classList.add("btn-dark")
     newElement.classList.add("class-"+classNum)
     newElement.innerText = buttonData
     newElement.addEventListener("click", function() {
@@ -93,7 +119,6 @@ function populateButton(day, time, classNum) {
 }
 
 function setClassData(classNum) {
-    // You could do this by looping through sibling elements
     let classData = classes[classNum]
     document.getElementById("info-name").innerText = classData[0]
     document.getElementById("info-email").innerText = classData[1]

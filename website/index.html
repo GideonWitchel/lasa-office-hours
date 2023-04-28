@@ -12,11 +12,42 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="index.css" media="screen" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
+    <div id="toolbar">
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-socialstudies-color" type="checkbox" id="checkbox-socialstudies" checked>
+            <label class="form-check-label" for="checkbox-socialstudies">Social Studies</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-finearts-color" type="checkbox" id="checkbox-finearts" checked>
+            <label class="form-check-label" for="checkbox-finearts">Fine Arts</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-english-color" type="checkbox" id="checkbox-english" checked>
+            <label class="form-check-label" for="checkbox-english">English</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-science-color" type="checkbox" id="checkbox-science" checked>
+            <label class="form-check-label" for="checkbox-science">Science</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-cte-color" type="checkbox" id="checkbox-cte" checked>
+            <label class="form-check-label" for="checkbox-CTE">CTE</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-math-color" type="checkbox" id="checkbox-math" checked>
+            <label class="form-check-label" for="checkbox-math">Math</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+            <input class="form-check-input class-lote-color" type="checkbox" id="checkbox-lote" checked>
+            <label class="form-check-label" for="checkbox-LOTE">LOTE</label>
+        </div>
+    </div>
     <div class="week">
         <table class="table table-dark table-striped table-bordered">
             <thead>
@@ -103,16 +134,18 @@
         </table>
     </div>
 
-    <div id="filler"></div>
+    <div id="filler-bottom"></div>
 
-    <div id="classInfo">
-        <p class="info" id="info-name">Class Name</p>
-        <p class="info" id="info-email">email@email.email</p>
-        <p class="info" id="info-class">Class</p>
-        <p class="info" id="info-room">000</p>
-        <p class="info" id="info-time-1">Day 1 at Time 0:00 - 0:00</p>
-        <p class="info" id="info-time-2">Day 2 at Time 0:00 - 0:00</p>
-        <p class="info" id="info-time-3">Day 3 at Time 0:00 - 0:00</p>
+    <div id="class-info-1" class="footer">
+        <p class="info" id="info-name"></p>
+        <p class="info" id="info-email"></p>
+        <p class="info" id="info-class"></p>
+        <p class="info" id="info-room"></p>
+    </div>
+    <div id="class-info-2" class="footer">
+        <p class="info" id="info-time-1"></p>
+        <p class="info" id="info-time-2"></p>
+        <p class="info" id="info-time-3"></p>
     </div>
 
     <footer class="footer bg-dark footer-dark">
