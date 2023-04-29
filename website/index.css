@@ -22,6 +22,8 @@ th {
 }
 .week {
     margin: 0px;
+    padding-top: 0em;
+    padding-bottom: 8em;
 }
 .block-pocket {
     display: flex;
@@ -29,8 +31,6 @@ th {
     align-items: flex-start;
     align-content: center;
     gap: 10px;
-}
-.block {
 }
 #class-info-1{
     bottom: 6em;
@@ -45,27 +45,53 @@ th {
     padding: 0 20px 0 20px;
     margin: auto 0 auto 0;
 }
-#filler-bottom {
-    height: 5em;
-}
-#filler-top {
-    height: 3em;
-}
 #toolbar {
     position: sticky;
-    display: flex;
-    justify-content: center;
     left: 0;
     top: 0;
+    height: 3em;
     width: 100%;
+}
+#toolbar-subjects, #toolbar-classes {
+    display: flex;
+    justify-content: center;
     height: 3em;
     background-color: dimgray;
     color: white;
+    text-align: center;
 }
+#toolbar-classes{
+    height: 0em;
+}
+/* form-check must stay above form-switch so form-switch overrides */
 .form-check {
+    padding: 5px;
+}
+.form-switch {
     padding: 0 50px 0 50px;
     margin: auto 0 auto 0;
 }
+.classes-container {
+    padding: 40px 50px 40px 50px;
+    margin: auto 0 auto 0;
+}
+#toggle-toolbar-classes {
+    position: fixed;
+    top:0;
+    left:0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0px;
+}
+h5 {
+    padding: 10px;
+}
+
+
+/* Class colors */
+
+
 .class-socialstudies-color, .class-socialstudies-color:checked {
     background-color: green;
     border: dimgray;

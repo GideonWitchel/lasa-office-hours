@@ -5,6 +5,15 @@ data = [[['0', '8', '9', '14', '19', '32', '34', '35', '44', '46', '51', '58', '
 window.addEventListener("load", function() {
     drawButtons()
     initCheckboxes()
+
+    $("#toggle-toolbar-classes").click(function() {
+        // Show the teacher toggles (or reverse)
+        $("#toolbar-classes").toggle()
+        // Hide everything else (or reverse)
+        $("#class-info-1").toggle()
+        $("#class-info-2").toggle()
+        $(".week").toggle()
+    });
 });
 
 function drawButtons() {
@@ -17,19 +26,97 @@ function drawButtons() {
     }
 }
 
+function getCategory(rawCategory){
+    switch(rawCategory){
+        case "Social Studies":
+            return "socialstudies"
+        case "Fine Arts":
+            return "finearts"
+        case "English":
+            return "english"
+        case "Science":
+            return "science"
+        case "CTE":
+            return "cte"
+        case "Math":
+            return "math"
+        default:
+            if(rawCategory.includes("LOTE")){
+                return "lote"
+            }
+            else {
+                return "unknown"
+            }
+    }
+}
+
 function initCheckboxes() {
+    // Init category sliders
     let categories = ["socialstudies", "finearts", "english", "science", "cte", "math", "lote"]
-    for (let i = 0; i < categories.length; i++) {
-        $("#checkbox-"+categories[i]).change(function() {
+    for (let category = 0; category < categories.length; category++) {
+        $("#checkbox-"+categories[category]).change(function() {
             if (this.checked){
                 // Enable all buttons
-                $(".class-"+categories[i]).show()
+                $(".class-"+categories[category]).show()
+                // Enable all teacher specific buttons
+                for (let i = 0; i < classes.length; i++){
+                    if(categories[category] === getCategory(classes[i][2])) {
+                        $("#class-checkbox-"+i).prop("checked", true)
+                    }
+                }
             }
             else {
                 // Disable all buttons
-                $(".class-"+categories[i]).hide()
+                $(".class-"+categories[category]).hide()
+                // Disable all teacher specific buttons
+                for (let i = 0; i < classes.length; i++){
+                    if(categories[category] === getCategory(classes[i][2])) {
+                        $("#class-checkbox-"+i).prop("checked", false)
+                    }
+                }
             }
         });
+    }
+
+    // Init teacher checkboxes
+    let parentObj
+    for (let i = 0; i < classes.length; i++) {
+        let cat = getCategory (classes[i][2])
+        if (cat === "unknown"){
+            continue
+        }
+        let parentObj = document.getElementById("classes-"+cat)
+
+        /*
+        <div className="form-check">
+            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label className="form-check-label" htmlFor="flexCheckDefault">Default checkbox</label>
+        </div>
+        */
+        let newElement = document.createElement("div")
+        newElement.className = "form-check"
+        let newInput = document.createElement("input")
+        newInput.className = "form-check-input"
+        newInput.type = "checkbox"
+        newInput.id = "class-checkbox-"+i
+        newInput.checked = true
+        newInput.addEventListener("change", function(e) {
+           if (this.checked) {
+               // Enable this class
+               $(".class-"+i).show()
+           }
+           else {
+               // Disable this class
+               $(".class-"+i).hide()
+           }
+        });
+        newElement.appendChild(newInput)
+        let newLabel = document.createElement("label")
+        newLabel.className = "form-check-label"
+        newLabel.htmlFor = "class-checkbox-"+i
+        newLabel.innerText = classes[i][0]
+        newElement.appendChild(newLabel)
+        parentObj.appendChild(newElement)
     }
 }
 
@@ -73,42 +160,9 @@ function populateButton(day, time, classNum) {
     let newElement = document.createElement("button")
     newElement.type = "button"
     newElement.classList.add("btn")
-    switch(classes[classNum][2]){
-        case "Social Studies":
-            newElement.classList.add("class-socialstudies")
-            newElement.classList.add("class-socialstudies-color")
-            break
-        case "Fine Arts":
-            newElement.classList.add("class-finearts")
-            newElement.classList.add("class-finearts-color")
-            break
-        case "English":
-            newElement.classList.add("class-english")
-            newElement.classList.add("class-english-color")
-            break
-        case "Science":
-            newElement.classList.add("class-science")
-            newElement.classList.add("class-science-color")
-            break
-        case "CTE":
-            newElement.classList.add("class-cte")
-            newElement.classList.add("class-cte-color")
-            break
-        case "Math":
-            newElement.classList.add("class-math")
-            newElement.classList.add("class-math-color")
-            break
-        default:
-            if(classes[classNum][2].includes("LOTE")){
-                newElement.classList.add("class-lote")
-                newElement.classList.add("class-lote-color")
-            }
-            else {
-                newElement.classList.add("class-unknown")
-                newElement.classList.add("class-unknown-color")
-            }
-            break
-    }
+    let cat = getCategory (classes[classNum][2])
+    newElement.classList.add("class-"+ cat)
+    newElement.classList.add("class-"+ cat +"-color")
     newElement.classList.add("btn-dark")
     newElement.classList.add("class-"+classNum)
     newElement.innerText = buttonData
