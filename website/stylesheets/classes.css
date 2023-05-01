@@ -1,0 +1,38 @@
+/* class colors */
+
+.class-socialstudies-color, .class-socialstudies-color:checked {
+    background-color: green;
+    border: dimgray;
+}
+.class-finearts-color, .class-finearts-color:checked {
+    background-color: royalblue;
+    border: dimgray;
+}
+.class-english-color, .class-english-color:checked {
+    background-color: mediumpurple;
+    color: black;
+    border: dimgray;
+}
+.class-science-color, .class-science-color:checked {
+    background-color: indianred;
+    border: dimgray;
+}
+.class-cte-color, .class-cte-color:checked {
+    background-color: darkorange;
+    border: dimgray;
+}
+.class-math-color, .class-math-color:checked {
+    background-color: lightsalmon;
+    border: dimgray;
+    color: black;
+}
+.class-lote-color, .class-lote-color:checked {
+    background-color: lightblue;
+    color: black;
+    border: dimgray;
+}
+.class-unknown-color {
+    background-color: white;
+    color: black;
+    border: dimgray;
+}

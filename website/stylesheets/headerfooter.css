@@ -1,0 +1,51 @@
+/* header */
+
+#toolbar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 3em;
+    width: 100%;
+}
+#toolbar-subjects, #toolbar-classes {
+    display: flex;
+    justify-content: center;
+    height: 3em;
+    background-color: dimgray;
+    color: white;
+    text-align: center;
+}
+#toolbar-classes{
+    height: 0em;
+}
+
+/* footer */
+
+.footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3em;
+}
+.foot {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    color: white;
+}
+#class-info-1{
+    bottom: 6em;
+    background-color: dimgray;
+}
+#class-info-2{
+    bottom: 3em;
+    background-color: dimgray;
+}
+.info{
+    color: white;
+    padding: 0 20px 0 20px;
+    margin: auto 0 auto 0;
+}
