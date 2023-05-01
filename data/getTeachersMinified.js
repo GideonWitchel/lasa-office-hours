@@ -1,0 +1,1 @@
+async function gt(){let r=new Set,e=2;for(;e<100;){try{t=document.getElementById("r"+e+"td2").firstElementChild.innerText,r.add(t)}catch(n){break}e++}console.log(r);let a=Array.from(r).join(";");document.body.innerHTML=a+"<br><br><br><br>Reload to bring back normal TEAMS.",await navigator.clipboard.writeText(a)}gt();

@@ -28,8 +28,9 @@ function getTeachers() {
 async function displaySet(teachers){
 	// Output in every way possible
 	console.log(teachers)
-	document.body.innerHTML = (Array.from(teachers).join(";")+"<br><br><br><br>Reload to bring back normal TEAMS.")
-	await navigator.clipboard.writeText(teachers);
+	let teachersAsString = Array.from(teachers).join(";")
+	document.body.innerHTML = (teachersAsString+"<br><br><br><br>Reload to bring back normal TEAMS.")
+	await navigator.clipboard.writeText(teachersAsString);
 }
 
 displaySet(getTeachers())
