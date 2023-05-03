@@ -3,8 +3,8 @@
 function drawClasses() {
     for (let day = 0; day < 5; day++) {
         for (let time = 0; time < 3; time++){
-            for(let classNum = 0; classNum < data[time][day].length; classNum++) {
-                populateClass(day, time, data[time][day][classNum])
+            for(let classNumIndex = 0; classNumIndex < data[time][day].length; classNumIndex++) {
+                populateClass(day, time, data[time][day][classNumIndex])
             }
         }
     }
@@ -60,6 +60,14 @@ function populateClass(day, time, classNum) {
         setClassData(classNum)
     });
     folder.appendChild(newElement)
+
+    // Hide if not in the cookie
+    if (!toggled.has(parseInt(classNum))) {
+        // Not using the setClass(index, shown) function because
+        // the cookie should not be edited during initialization, and
+        // the edits would be unnecessary since the current cookie is what's being initialized
+        $(".class-"+classNum).hide()
+    }
 }
 
 function setClassData(classNum) {
@@ -71,4 +79,23 @@ function setClassData(classNum) {
     document.getElementById("info-time-1").innerText = classData[4]
     document.getElementById("info-time-2").innerText = classData[5]
     document.getElementById("info-time-3").innerText = classData[6]
+}
+
+function setClass(index, shown) {
+    // Show
+    if (shown){
+        // Main page class
+        $(".class-"+index).show()
+        // Cookie
+        toggled.add(index)
+    }
+    // Hide
+    else {
+        // Main page class
+        $(".class-"+index).hide()
+        // Cookie
+        toggled.delete(index)
+    }
+
+    setCookie("classes",getCookieString(),"365")
 }

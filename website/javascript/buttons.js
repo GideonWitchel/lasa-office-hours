@@ -2,31 +2,9 @@
 
 function initCheckboxes() {
     // Init category sliders
-    let categories = ["socialstudies", "finearts", "english", "science", "cte", "math", "lote"]
     for (let category = 0; category < categories.length; category++) {
         $("#checkbox-"+categories[category]).change(function() {
-            // This is split into 2 categories instead of using .toggle() because
-            // every checkbox needs to be standardized, regardless of current state.
-            if (this.checked){
-                // Enable all buttons
-                $(".class-"+categories[category]).show()
-                // Enable all teacher specific buttons
-                for (let i = 0; i < classes.length; i++){
-                    if(categories[category] === getCategory(classes[i][2])) {
-                        $("#class-checkbox-"+i).prop("checked", true)
-                    }
-                }
-            }
-            else {
-                // Disable all buttons
-                $(".class-"+categories[category]).hide()
-                // Disable all teacher specific buttons
-                for (let i = 0; i < classes.length; i++){
-                    if(categories[category] === getCategory(classes[i][2])) {
-                        $("#class-checkbox-"+i).prop("checked", false)
-                    }
-                }
-            }
+            setAllWholeCategory(this.checked, categories[category])
         });
     }
 
@@ -38,6 +16,17 @@ function initCheckboxes() {
         }
         let parentObj = document.getElementById("classes-"+cat)
         parentObj.appendChild(makeTeacherCheckbox(i))
+    }
+}
+
+function setAllWholeCategory(state, category){
+    for (let i = 0; i < classes.length; i++){
+        if(category === getCategory(classes[i][2])) {
+            // Set checkbox
+            $("#class-checkbox-"+i).prop("checked", state)
+            // Set class on main page
+            setClass(i, state)
+        }
     }
 }
 
@@ -53,15 +42,16 @@ function makeTeacherCheckbox(i) {
     newInput.className = "form-check-input"
     newInput.type = "checkbox"
     newInput.id = "class-checkbox-"+i
-    newInput.checked = true
+
+    // If the box was checked in the cookie, check the box.
+    newInput.checked = toggled.has(i);
+
     newInput.addEventListener("change", function(e) {
         if (this.checked) {
-            // Enable this class in the main view
-            $(".class-"+i).show()
+            setClass(i, true)
         }
         else {
-            // Disable this class in the main view
-            $(".class-"+i).hide()
+            setClass(i, false)
         }
     });
     newElement.appendChild(newInput)
