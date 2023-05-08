@@ -21,25 +21,17 @@ th {
 
 /* checkboxes and switches */
 
-/* form-check must stay above form-switch so form-switch overrides */
 #toggle-toolbar-classes {
-    position: fixed;
-    top:0;
-    left:0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border: 0px;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
 }
+/* form-check must stay above form-switch so form-switch overrides */
 .form-check {
     padding: 5px;
 }
 .form-switch {
     padding: 0 50px 0 50px;
-    margin: auto 0 auto 0;
-}
-.classes-container {
-    padding: 40px 50px 40px 50px;
     margin: auto 0 auto 0;
 }
 h5 {

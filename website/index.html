@@ -21,6 +21,7 @@
     <script src="javascript/classes.js" type="text/javascript"></script>
     <script src="javascript/buttons.js" type="text/javascript"></script>
     <script src="javascript/cookies.js" type="text/javascript"></script>
+    <script src="javascript/teacherselect.js" type="text/javascript"></script>
 
     <link href="stylesheets/index.css" media="screen" rel="stylesheet" type="text/css">
     <link href="stylesheets/classes.css" media="screen" rel="stylesheet" type="text/css">
@@ -30,7 +31,6 @@
 <body>
     <div id="toolbar">
         <div id="toolbar-subjects">
-            <button type="button" class="btn btn-dark" id="toggle-toolbar-classes">Toggle Specific Teachers</button>
             <div class="form-check form-switch form-check-inline">
                 <input class="form-check-input class-socialstudies-color" type="checkbox" id="checkbox-socialstudies" checked>
                 <label class="form-check-label" for="checkbox-socialstudies">Social Studies</label>
@@ -59,18 +59,37 @@
                 <input class="form-check-input class-lote-color" type="checkbox" id="checkbox-lote" checked>
                 <label class="form-check-label" for="checkbox-LOTE">LOTE</label>
             </div>
-            <button type="button" class="btn btn-dark" id="toggle-import-classes">Import Classes</button>
+            <!-- <button type="button" class="btn btn-dark" id="toggle-import-classes">Import Classes</button> -->
         </div>
         <div id="toolbar-classes" style="display: none;">
-            <div class="classes-container" id="classes-socialstudies"><h5>Social Studies</h5></div>
-            <div class="classes-container" id="classes-finearts"><h5>Fine Arts</h5></div>
-            <div class="classes-container" id="classes-english"><h5>English</h5></div>
-            <div class="classes-container" id="classes-science"><h5>Science</h5></div>
-            <div class="classes-container" id="classes-cte"><h5>CTE</h5></div>
-            <div class="classes-container" id="classes-math"><h5>Math</h5></div>
-            <div class="classes-container" id="classes-lote"><h5>LOTE</h5></div>
+            <div id="toolbar-classes-internal">
+                <div class="classes-container" id="classes-socialstudies"><h5>Social Studies</h5></div>
+                <div class="classes-container" id="classes-finearts"><h5>Fine Arts</h5></div>
+                <div class="classes-container" id="classes-english"><h5>English</h5></div>
+                <div class="classes-container" id="classes-science"><h5>Science</h5></div>
+                <div class="classes-container" id="classes-cte"><h5>CTE</h5></div>
+                <div class="classes-container" id="classes-math"><h5>Math</h5></div>
+                <div class="classes-container" id="classes-lote"><h5>LOTE</h5></div>
+            </div>
+            <div id="toolbar-classes-dropdown">
+                <p>Or, select your classes here</p>
+                <select id="import-teacher-dropdown" class="form-control">
+                </select>
+                <div>
+                    <button type="submit" class="btn btn-secondary toggle-teacher-button" id="enable-specific-class-button">Enable</button>
+                    <button type="submit" class="btn btn-secondary toggle-teacher-button" id="disable-specific-class-button">Disable</button>
+                </div>
+            </div>
         </div>
+
+        <!--
+        The script is not very user-friendly.
+        It is easier to just type the names of teachers and select them from the dropdown.
+        -->
+
+        <!--
         <div id="import-classes" style="display: none;">
+
             <p>To automatically import your classes and display their office hours, follow these steps.</p>
             <p>Go to Frontline SIS (TEAMS), which is where you normally see your grades.</p>
             <p>Navigate to the "Report Card" tab.</p>
@@ -86,6 +105,8 @@
             <input class="form-control" type="text" id="import-classes-input" placeholder="Paste your teacher list here.">
             <button type="submit" class="btn btn-secondary" id="import-classes-button">Import</button>
         </div>
+        -->
+
     </div>
     <div class="week">
         <table class="table table-dark table-striped table-bordered">
@@ -186,9 +207,10 @@
     </div>
 
     <footer class="footer bg-dark footer-dark">
-            <div class="col-4 foot-div"><p class="foot">1012 Arthur Stiles Road, Austin, TX 78721</p></div>
-            <div class="col-4 foot-div"><p class="foot">Liberal Arts and Science Academy</p></div>
-            <div class="col-4 foot-div"><p class="foot">(512) 414-5272 (LASA) ext 0, Fax: (512) 414-6050</p></div>
+            <div class="col-3 foot-div"><button type="button" class="btn btn-secondary" id="toggle-toolbar-classes">Toggle Specific Teachers</button></div>
+            <div class="col-3 foot-div"><p class="foot">1012 Arthur Stiles Road, Austin, TX 78721</p></div>
+            <div class="col-3 foot-div"><p class="foot">Liberal Arts and Science Academy</p></div>
+            <div class="col-3 foot-div"><p class="foot">(512) 414-5272 (LASA) ext 0, Fax: (512) 414-6050</p></div>
     </footer>
 </body>
 </html>

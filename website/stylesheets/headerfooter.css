@@ -7,16 +7,36 @@
     height: 3em;
     width: 100%;
 }
-#toolbar-subjects, #toolbar-classes {
+#toolbar-subjects, #toolbar-classes-internal {
     display: flex;
     justify-content: center;
-    height: 3em;
     background-color: dimgray;
     color: white;
     text-align: center;
+    flex-wrap: wrap;
 }
-#toolbar-classes{
-    height: 0em;
+#toolbar-subjects {
+    height: 3em;
+}
+#toolbar-classes-internal {
+    background-color: #212529;
+}
+.classes-container {
+    padding: 30px 30px 30px 30px;
+}
+#toolbar-classes-dropdown {
+    color: white;
+    text-align: center;
+    margin: 20px 50px 20px 50px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+p{
+    margin: 0;
+}
+.toggle-teacher-button{
+    margin: 0 20px;
 }
 
 /* footer */
@@ -30,10 +50,9 @@
     width: 100%;
     height: 3em;
 }
-.foot {
+.foot-div {
     text-align: center;
     margin: auto;
-    padding: 10px;
     color: white;
 }
 #class-info-1{

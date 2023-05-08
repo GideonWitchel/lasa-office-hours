@@ -9,14 +9,17 @@ window.addEventListener("load", function() {
     initCookies()
     drawClasses()
     initCheckboxes()
+    initImportDropdown()
+    initImportButtons()
 
     $("#toggle-toolbar-classes").click(function() {
-        exclusiveToolbarToggle($("#toolbar-classes"), $("#import-classes"))
+        //exclusiveToolbarToggle($("#toolbar-classes"), $("#import-classes"))
+        toolbarToggle($("#toolbar-classes"))
     });
 
-    $("#toggle-import-classes").click(function() {
+    /*$("#toggle-import-classes").click(function() {
         exclusiveToolbarToggle($("#import-classes"), $("#toolbar-classes"))
-    });
+    });*/
 });
 
 
@@ -41,25 +44,5 @@ function getCategory(rawCategory){
             else {
                 return "unknown"
             }
-    }
-}
-
-function exclusiveToolbarToggle(toToggle, toCheck){
-    if(toToggle.is(":hidden")) {
-        // Turn on the toggled screen and turn off everything else
-        // Turn off the other menu
-        toToggle.show()
-        $("#class-info-1").hide()
-        $("#class-info-2").hide()
-        $(".week").hide()
-        toCheck.hide()
-    }
-    else {
-        // Turn off the toggled screen and turn on everything else
-        // Do not turn on the other menu
-        toToggle.hide()
-        $("#class-info-1").show()
-        $("#class-info-2").show()
-        $(".week").show()
     }
 }

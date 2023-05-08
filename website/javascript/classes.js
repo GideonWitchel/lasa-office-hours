@@ -82,20 +82,24 @@ function setClassData(classNum) {
 }
 
 function setClass(index, shown) {
+    console.log(index)
     // Show
     if (shown){
+        // Set local cookie
+        toggled.add(index)
         // Main page class
         $(".class-"+index).show()
-        // Cookie
-        toggled.add(index)
     }
     // Hide
     else {
+        // Set local cookie
+        toggled.delete(index)
         // Main page class
         $(".class-"+index).hide()
-        // Cookie
-        toggled.delete(index)
     }
 
+    // Set Checkbox
+    $("#class-checkbox-"+index).prop("checked", shown)
+    // Push local cookie changes to the actual document.cookie
     setCookie("classes",getCookieString(),"365")
 }
