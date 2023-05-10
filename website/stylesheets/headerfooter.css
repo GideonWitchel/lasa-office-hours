@@ -6,19 +6,16 @@
     position: sticky;
     top: 0;
 }
-#toolbar-subjects{
-    padding: 10px 0 0 0;
-}
 #toolbar-subjects, #toolbar-classes-internal {
     display: flex;
     justify-content: center;
-    background-color: dimgray;
     color: white;
     text-align: center;
     flex-wrap: wrap;
 }
-#toolbar-classes-internal {
-    background-color: #212529;
+#toolbar-subjects{
+    padding: 10px 0 0 0;
+    background-color: dimgray;
 }
 .classes-container {
     padding: 30px 30px 30px 30px;
@@ -65,4 +62,7 @@ p{
 .info{
     color: white;
     padding: 0 0 10px 0;
+}
+#true-footer{
+    background-color: #212529;
 }

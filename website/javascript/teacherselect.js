@@ -7,8 +7,13 @@ function toolbarToggle(toToggle){
         $("#class-info-1").hide()
         $("#class-info-2").hide()
         $(".week").hide()
-        // Update Button Text
-        document.getElementById("toggle-toolbar-classes").innerText = "Back to Main"
+
+        //Update Button
+        let button = $("#toggle-toolbar-classes")
+        button.text("Back to Main")
+        button.css("background-color", "#212529")
+        // Update footer color
+        $("#true-footer").css("background-color", "dimgray")
     }
     else {
         // Turn off the toggled screen and turn on everything else
@@ -16,8 +21,13 @@ function toolbarToggle(toToggle){
         $("#class-info-1").show()
         $("#class-info-2").show()
         $(".week").show()
-        // Update Button Text
-        document.getElementById("toggle-toolbar-classes").innerText = "Toggle Specific Teachers"
+
+        //Update Button
+        let button = $("#toggle-toolbar-classes")
+        button.text("Toggle Specific Teachers")
+        button.css("background-color", "dimgray")
+        // Update footer color
+        $("#true-footer").css("background-color", "#212529")
     }
 }
 
