@@ -27,6 +27,8 @@ function toolbarToggle(toToggle){
         $("#class-info-1").hide()
         $("#class-info-2").hide()
         $(".week").hide()
+        // Update Button Text
+        document.getElementById("toggle-toolbar-classes").innerText = "Back to Main"
     }
     else {
         // Turn off the toggled screen and turn on everything else
@@ -34,6 +36,8 @@ function toolbarToggle(toToggle){
         $("#class-info-1").show()
         $("#class-info-2").show()
         $(".week").show()
+        // Update Button Text
+        document.getElementById("toggle-toolbar-classes").innerText = "Toggle Specific Teachers"
     }
 }
 
