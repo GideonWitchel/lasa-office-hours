@@ -14,3 +14,27 @@ To determine the efficacy of the website, we will have 3 criteria:
 - Visually appealing and well organized.
 - Simple user interface to select classes, teachers, subjects to display.
 - Well documented for future upkeep as teachers’ office hours change.
+
+
+# Instructions for importing teacher data for future years
+
+## Google Form
+
+Here is the link to a Google folder containing the Google Form and Responses Spreadsheet:
+- https://drive.google.com/drive/folders/1SsBOW5KBBuG1YNmpyrtrmeK4TKjP_QMP?usp=sharing
+
+Open the Unified Office Hours (Responses) Google Sheet and delete any previous response data. Delete everything except row 1
+
+Next, send out the google form and have all teachers fill out the form. This is the link to the form:
+- https://forms.gle/DSBx3V4bc9uc2ZFm7
+
+
+## Parsing the Data
+
+- After all teachers have filled out the form, download the data from the spreadsheet
+- Download the data as a CSV from the Unified Office Hours (Responses) sheets in the above shared folder (File -> Downlod -> Comma Separated Values)
+- Save the file as 'Unified Office Hours (Responses).csv' in the data directory
+- Run the python script 'pythonScriptForArray.py' in the same directory as the downloaded form data
+
+## Putting the Data into the Website
+- Copy and paste the outputed arrays from pythonScriptForArray.py' and replace the 'classes' and 'data' arrays in the 'index.js' file
