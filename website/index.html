@@ -59,32 +59,7 @@
                 <input class="form-check-input class-lote-color" type="checkbox" id="checkbox-lote" checked>
                 <label class="form-check-label" for="checkbox-LOTE">LOTE</label>
             </div>
-            <!-- <button type="button" class="btn btn-dark" id="toggle-import-classes">Import Classes</button> -->
         </div>
-        <!--
-        The script is not very user-friendly.
-        It is easier to just type the names of teachers and select them from the dropdown.
-        -->
-
-        <!--
-        <div id="import-classes" style="display: none;">
-
-            <p>To automatically import your classes and display their office hours, follow these steps.</p>
-            <p>Go to Frontline SIS (TEAMS), which is where you normally see your grades.</p>
-            <p>Navigate to the "Report Card" tab.</p>
-            <p>Click on the URL bar where the website name is displayed.</p>
-            <p>Select everything in that bar and delete it, but do not press Enter.</p>
-            <p>Type "javascript:" in the bar, without the quotation marks. Do not press Enter.</p>
-            <p>Paste the script below in the bar after "javascript:".</p>
-            <p>Copy the output which will be displayed on screen.</p>
-            <p>Paste the output in the text box below.</p>
-            <p>Script:</p>
-            <p id="script">async function gt(){let r=new Set,e=2;for(;e<100;){try{t=document.getElementById("r"+e+"td2").firstElementChild.innerText,r.add(t)}catch(n){break}e++}console.log(r);let a=Array.from(r).join(";");document.body.innerHTML=a+"&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Reload to bring back normal TEAMS.",await navigator.clipboard.writeText(a)}gt();</p>
-            <p> List of Teachers: </p>
-            <input class="form-control" type="text" id="import-classes-input" placeholder="Paste your teacher list here.">
-            <button type="submit" class="btn btn-secondary" id="import-classes-button">Import</button>
-        </div>
-        -->
 
     </div>
     <div class="content">

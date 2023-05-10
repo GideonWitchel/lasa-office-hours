@@ -13,13 +13,9 @@ window.addEventListener("load", function() {
     initImportButtons()
 
     $("#toggle-toolbar-classes").click(function() {
-        //exclusiveToolbarToggle($("#toolbar-classes"), $("#import-classes"))
         toolbarToggle($("#toolbar-classes"))
     });
 
-    /*$("#toggle-import-classes").click(function() {
-        exclusiveToolbarToggle($("#import-classes"), $("#toolbar-classes"))
-    });*/
 });
 
 

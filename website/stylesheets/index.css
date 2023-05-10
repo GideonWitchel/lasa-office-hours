@@ -44,30 +44,3 @@ th {
 h5 {
     padding: 10px;
 }
-
-/* import classes */
-/*
-#toggle-import-classes {
-    position: fixed;
-    top:0;
-    right:0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border: 0px;
-}
-#import-classes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    color: white;
-    margin: 40px;
-}
-#script {
-    font-size: 10px;
-}
-#import-classes-button {
-    margin: 20px;
-}
-*/
