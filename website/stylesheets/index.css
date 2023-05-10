@@ -1,14 +1,19 @@
 body {
     background-color: #212529;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
 }
 th {
     text-align: center;
     vertical-align: middle;
 }
-.week {
-    margin: 0px;
-    padding-top: 0em;
-    padding-bottom: 8em;
+.content {
+    flex: 1;
+    overflow-x: scroll;
 }
 .block-pocket {
     display: flex;
@@ -17,7 +22,9 @@ th {
     align-content: center;
     gap: 10px;
 }
-
+.week{
+    margin: 0;
+}
 
 /* checkboxes and switches */
 
@@ -31,7 +38,7 @@ th {
     padding: 5px;
 }
 .form-switch {
-    padding: 0 50px 0 50px;
+    padding: 0 50px 10px 50px;
     margin: auto 0 auto 0;
 }
 h5 {
@@ -39,7 +46,7 @@ h5 {
 }
 
 /* import classes */
-
+/*
 #toggle-import-classes {
     position: fixed;
     top:0;
@@ -63,3 +70,4 @@ h5 {
 #import-classes-button {
     margin: 20px;
 }
+*/
