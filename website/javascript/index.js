@@ -15,7 +15,6 @@ window.addEventListener("load", function() {
     $("#toggle-toolbar-classes").click(function() {
         toolbarToggle($("#toolbar-classes"))
     });
-
 });
 
 

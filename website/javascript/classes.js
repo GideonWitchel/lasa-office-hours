@@ -71,6 +71,9 @@ function populateClass(day, time, classNum) {
 }
 
 function setClassData(classNum) {
+    // Remove message if it exists
+    $("#class-info-message").remove()
+
     let classData = classes[classNum]
     document.getElementById("info-name").innerText = classData[0]
     document.getElementById("info-email").innerText = classData[1]

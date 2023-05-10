@@ -63,6 +63,9 @@ p{
     color: white;
     padding: 0 0 10px 0;
 }
+#class-info-message{
+    color: white;
+}
 #true-footer{
     background-color: #212529;
 }
