@@ -69,3 +69,16 @@ p{
 #true-footer{
     background-color: #212529;
 }
+
+/* for phones */
+.phone-toolbar{
+    display: none;
+}
+@media only screen and (max-width: 900px) {
+    .footer, #toolbar {
+        display: none;
+    }
+    .phone-toolbar {
+        display: block;
+    }
+}

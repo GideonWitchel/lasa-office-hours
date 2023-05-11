@@ -4,8 +4,8 @@ function toolbarToggle(toToggle){
     if(toToggle.is(":hidden")) {
         // Turn on the toggled screen and turn off everything else
         toToggle.show()
-        $("#class-info-1").hide()
-        $("#class-info-2").hide()
+        $("#class-info-1").css("display", "none")
+        $("#class-info-2").css("display", "none")
         $(".week").hide()
 
         //Update Button
@@ -14,12 +14,14 @@ function toolbarToggle(toToggle){
         button.css("background-color", "#212529")
         // Update footer color
         $("#true-footer").css("background-color", "dimgray")
+        // Show header (if on mobile)
+        $("#toolbar").css('display', 'block');
     }
     else {
         // Turn off the toggled screen and turn on everything else
         toToggle.hide()
-        $("#class-info-1").show()
-        $("#class-info-2").show()
+        $("#class-info-1").css("display", "")
+        $("#class-info-2").css("display", "")
         $(".week").show()
 
         //Update Button
@@ -28,6 +30,8 @@ function toolbarToggle(toToggle){
         button.css("background-color", "dimgray")
         // Update footer color
         $("#true-footer").css("background-color", "#212529")
+        // Hide header (if on mobile)
+        $("#toolbar").css('display', '');
     }
 }
 

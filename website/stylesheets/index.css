@@ -41,6 +41,9 @@ th {
     padding: 0 50px 10px 50px;
     margin: auto 0 auto 0;
 }
+.phone-toolbar-button-padding {
+    margin: 0 50px 10px 50px;
+}
 h5 {
     padding: 10px;
 }
