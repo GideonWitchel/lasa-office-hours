@@ -5,7 +5,7 @@ LASA teachers’ office hours are displayed on the LASA Life app in a spreadshee
 
 We are making a website which will visually display office hours in a calendar-like format. Students will be able to look at specific classes, teachers, subjects, or a combination of them, easily figuring out when and where they need to be.
 
-The website will use HTML, CSS, Javascript, Bootstrap, and Flask. We will use Python and Regex for data scraping and sorting.
+The website will use HTML, CSS, Javascript, and Bootstrap. We will use Python and Google Forms for data gathering and processing.
 
 We will use GitHub to collaborate and enforce version control.
 
