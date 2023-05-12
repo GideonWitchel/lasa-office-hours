@@ -16,6 +16,9 @@
     #footer-container {
         position: relative;
     }
+    .form-switch{
+        padding: 0 20px 10px 60px;
+    }
 }
 
 /* Only display class info when phone is in landscape */
