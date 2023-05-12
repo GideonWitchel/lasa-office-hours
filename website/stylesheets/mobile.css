@@ -1,0 +1,39 @@
+/* Hide headers and footers when on mobile */
+.phone-toolbar{
+    display: none;
+}
+@media only screen and (max-width: 900px) {
+    #true-footer, #toolbar {
+        display: none;
+    }
+    .phone-toolbar {
+        display: block;
+    }
+    .form-check-input {
+        scale: 2;
+        margin-right: 1.5em;
+    }
+    #footer-container {
+        position: relative;
+    }
+}
+
+/* Only display class info when phone is in landscape */
+@media only screen and (max-width: 650px) {
+    #footer-container {
+        display: none;
+    }
+}
+
+/* Only display one day when phone is in portrait */
+@media only screen and (max-width: 500px) {
+    td {
+        display: none;
+    }
+    .column-header {
+        display: none;
+    }
+    .today{
+        display: table-cell;
+    }
+}

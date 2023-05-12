@@ -11,6 +11,7 @@ window.addEventListener("load", function() {
     initCheckboxes()
     initImportDropdown()
     initImportButtons()
+    setTodayClasses()
 
     $("#toggle-toolbar-classes").click(function() {
         toolbarToggle($("#toolbar-classes"))
@@ -42,5 +43,47 @@ function getCategory(rawCategory){
             else {
                 return "unknown"
             }
+    }
+}
+
+function setTodayClasses(){
+    // 0 = Sun, 1 = Mon, 2 = Tue, ... 6 = Sat
+    let d = new Date();
+    d = d.getDay();
+
+    // To avoid duplicate JQuery selectors
+    let monday = $(".monday")
+    let tuesday = $(".tuesday")
+    let wednesday = $(".wednesday")
+    let thursday = $(".thursday")
+    let friday = $(".friday")
+
+    switch (d) {
+        // Select the current day and next day for any given day
+        // Saturday and Sunday are treated like Monday
+        case 6:
+        case 0:
+        case 1:
+            monday.addClass("today")
+            tuesday.addClass("today")
+            break
+        case 2:
+            tuesday.addClass("today")
+            wednesday.addClass("today")
+            break
+        case 3:
+            wednesday.addClass("today")
+            thursday.addClass("today")
+            break
+        case 4:
+            thursday.addClass("today")
+            friday.addClass("today")
+            break
+        case 5:
+            friday.addClass("today")
+            monday.addClass("today")
+            break
+        default:
+            console.error("Impossible Day of the Week")
     }
 }
